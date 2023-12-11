@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;700&family=Roboto:wght@300&display=swap');
+
+body {
+    font-family: $font-main;
+    background-color: $dark;
+    color: $white;
+    font-size: 16px;
+}
+
+.lock {
+    overflow: hidden;
+}
+
+a {
+    color: $white;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+        color: $accent;
+    }
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    
+    &--small {
+        max-width: 824px;
+    }
+}
+
+.visually-hidden {
+    height: 1px;
+    overflow: hidden;
+    width: 1px;
+
+    position: absolute;
+
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+
+    white-space: nowrap;
+}
+
+.none {
+    display: none !important;
+}
+
+img {
+    background-repeat: no-repeat;
+}
+
+.title-1, .title-2 {
+    color: $accent;
+    font-family: $font-accent;
+    font-weight: 700;
+}
+
+.title-1 {
+    font-size: 48px;
+
+    @include mediaTablet {
+        font-size: 32px;
+    }
+}
+
+.title-2 {
+    font-size: 36px;
+
+    @include mediaTablet {
+        font-size: 28px;
+    }
+}
+
+.social-links {
+    display: flex;
+    column-gap: 22px;
+    
+
+    & > a {
+        transition: opacity 0.2s ease-in;
+        &:hover {
+            opacity: 0.75;
+        }  
+    }
+
+    @media screen and (max-width:639px) {
+        justify-content: center;
+    }
+}
+
+.link-email {
+    font-weight: 700;
+    color: $accent;
+    transition: filter 0.2s ease-in;
+
+    &:hover {
+        filter: saturate(1.5);
+    }
+}
+
+// Мобильная навигация
+.toggle-menu {
+    display: none;
+    
+    &--active .toggle-menu__middle {
+        background-color: transparent;
+
+        &::before, &::after {
+            top: 0;
+            transition: top 0.2s linear, transform  0.2s ease-in 0.2s;
+        }
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+
+    @include mediaTablet {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+
+        span {
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            background-color: $white;
+
+            &::before, &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: 30px;
+                height: 1px;
+                background-color: $white;
+                transition: top 0.2s linear 0.2s, transform  0.2s ease-in, background-color 0.2s ease-in;
+            }
+
+            &::before {
+                top: -10px;
+            }
+
+            &::after {
+                top: 10px;
+            }
+        }
+    }
+
+}
+
+.header-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 99;
+    background-color: $dark;
+    transform: translateX(100%);
+    transition: transform  0.3s ease-in;
+
+    &--active {
+        transform: translateX(0);
+    }
+}
+
+.header-menu__content {
+    text-align: center;
+    ul {
+        font-size: 20px;
+    }
+
+    li + li {
+        margin-top: 40px;
+    }
+}
+

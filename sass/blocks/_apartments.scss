@@ -1,0 +1,32 @@
+.apartments {
+    position: relative;
+
+    &::before {
+        @include dekorEl;
+        content: "III";
+        left: calc(-20% + 555px);
+        top: -70px;
+        
+        @include mediaTablet {
+            display: none;
+        }
+    } 
+}
+
+.apartments__title {
+    margin-bottom: 88px;
+
+    @include mediaTablet {
+        margin-bottom: 40px;
+    }
+}
+
+.apartments__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    @include mediaTablet {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    }
+}

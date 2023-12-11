@@ -1,0 +1,25 @@
+.cta-question {
+    padding-bottom: 180px;
+
+    @include mediaTablet {
+        padding-bottom: 90px;
+    }
+}
+
+.cta-question__title {
+    margin-bottom: 38px;
+
+    @include mediaTablet {
+        margin-bottom: 19px;
+    }
+}
+
+.cta-question__form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    
+    @include mediaTablet {
+        grid-template-columns: 1fr;
+    }
+}

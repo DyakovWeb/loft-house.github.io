@@ -1,0 +1,13 @@
+@mixin dekorEl {
+        position: absolute;
+        color: rgba(255, 255, 255, 0.02);
+        font-family: $font-accent;
+        font-size: 400px;
+        font-weight: 700;
+}
+
+@mixin mediaTablet {
+        @media screen and (max-width: $tablet) {
+           @content;     
+        }
+}

@@ -1,0 +1,41 @@
+.cta {
+    padding: 180px 0;
+    background: linear-gradient(180deg, $dark 10.42%, rgba(36, 43, 51, 0.00) 50.52%, $dark 90.1%), 
+    linear-gradient(0deg, rgba(36, 43, 51, 0.90) 0%, rgba(36, 43, 51, 0.90) 100%), 
+    url('./../img/cta/bg-cta.jpg'), #C4C4C4;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include mediaTablet {
+        padding: 90px 0;
+    }
+}
+
+.cta__wrapper {
+    gap: 30px;
+}
+
+.cta__title {
+    margin-bottom: 17px;
+}
+
+.cta__description {
+    line-height: 1.5;
+
+    @include mediaTablet {
+        font-size: 12px;
+    }
+}
+
+.cta__form {
+    gap: 35px 30px;
+}
+
+.cta__wrapper, .cta__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    @include mediaTablet {
+        grid-template-columns: 1fr;
+    }
+}

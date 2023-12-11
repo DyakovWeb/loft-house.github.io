@@ -1,0 +1,37 @@
+.info {
+    position: relative;
+    font-size: 18px;
+
+    &--address, &--phone {
+        padding-left: 35px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 21px;
+            height: 21px;
+        }
+    }
+
+    &--address::before {
+        background-image: url('./../img/header/placeholder.svg');
+    }
+
+    &--phone::before {
+        background-image: url('./../img/header/phone.svg');
+    }
+
+    @include mediaTablet {
+        font-size: 16px;
+
+        &--address, &--phone {
+            padding-left: 30px;
+
+            &::before {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.advantage {
+    position: relative;
+    padding: 120px 0;
+    overflow: hidden;
+
+    &::before {
+        @include dekorEl;
+        content: "II";
+        left: calc(50% + 412px);
+        top: -25px;  
+    }
+
+    @include mediaTablet {
+        padding: 60px 0;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.advantage__row {
+    display: flex;
+    column-gap: 70px;
+
+    & > *:first-child {
+        flex-shrink: 0.9;
+    }
+
+    @include mediaTablet {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 30px;
+    }
+}
+
+.advantage__card {
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.35;
+
+    img {
+        margin-bottom: 53px;
+    }
+
+    @include mediaTablet {
+        font-size: 16px;
+
+        img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 25px;
+        }
+    }
+}
